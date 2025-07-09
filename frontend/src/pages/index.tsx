@@ -9,10 +9,12 @@ import Footer from '../components/Footer';
 export default function Home() {
   const [idQuery, setIdQuery] = useState('');
   const [nameQuery, setNameQuery] = useState('');
+
   const [results, setResults] = useState<IBook[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [searchPerformed, setSearchPerformed] = useState(false);
+
   const performSearch = async (searchFn: () => Promise<IBook[] | IBook>) => {
     setIsLoading(true);
     setError(null);
@@ -28,21 +30,18 @@ export default function Home() {
     }
   };
 
-  // Função para a busca por ID
   const handleIdSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!idQuery.trim()) return;
     performSearch(() => BookApi.getBookById(idQuery));
   };
 
-  // Função para a busca por Nome/Autor
   const handleNameSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!nameQuery.trim()) return;
     performSearch(() => BookApi.searchBooksByName(nameQuery));
   };
 
-  // Função para buscar todos os livros 
   const handleGetAllBooks = () => {
     performSearch(BookApi.getAllBooks);
   };
@@ -58,6 +57,7 @@ export default function Home() {
           <p className="mt-4 text-xl text-slate-600">
             A sua biblioteca definitiva de livros de matemática.
           </p>
+
           <div className="mt-16 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h2 className="text-2xl font-bold text-slate-700 mb-4">Buscar por ID</h2>
@@ -68,15 +68,14 @@ export default function Home() {
                     value={idQuery}
                     onChange={(e) => setIdQuery(e.target.value)}
                     placeholder="Digite o ID do livro..."
-                    className="w-full pl-5 pr-12 py-3 text-lg rounded-full border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none"
+                    className="w-full pl-4 pr-10 py-2 text-base rounded-full border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none"
                   />
-                  <button type="submit" className="absolute inset-y-0 right-0 flex items-center pr-5" aria-label="Buscar por ID">
-                    <FiSearch className="h-6 w-6 text-gray-400" />
+                  <button type="submit" className="absolute inset-y-0 right-0 flex items-center pr-4" aria-label="Buscar por ID">
+                    <FiSearch className="h-5 w-5 text-gray-400" />
                   </button>
                 </div>
               </form>
             </div>
-            
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h2 className="text-2xl font-bold text-slate-700 mb-4">Buscar por Título</h2>
               <form onSubmit={handleNameSearchSubmit}>
@@ -85,18 +84,26 @@ export default function Home() {
                     type="text"
                     value={nameQuery}
                     onChange={(e) => setNameQuery(e.target.value)}
-                    placeholder="Digite o título do livro ou o autor..."
-                    className="w-full pl-5 pr-12 py-3 text-lg rounded-full border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none"
+                    placeholder="Digite o título do livro..."
+                    className="w-full pl-4 pr-10 py-2 text-base rounded-full border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none"
                   />
-                  <button type="submit" className="absolute inset-y-0 right-0 flex items-center pr-5" aria-label="Buscar por Título">
-                    <FiSearch className="h-6 w-6 text-gray-400" />
+                   <button type="submit" className="absolute inset-y-0 right-0 flex items-center pr-4" aria-label="Buscar por Título">
+                    <FiSearch className="h-5 w-5 text-gray-400" />
                   </button>
                 </div>
               </form>
             </div>
           </div>
+          <div className="mt-12 text-center">
+            <button
+              onClick={handleGetAllBooks}
+              className="inline-flex items-center gap-3 px-8 py-4 border border-transparent text-lg font-medium rounded-full shadow-lg text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+            >
+              <FiBookOpen /> Listar Todos os Livros
+            </button>
+          </div>
         </div>
-        <div className="pb-36 px-4 sm:px-6 lg:px-8 relative">
+        <div className="pb-36 px-4 sm:px-10 lg:px-8 relative">
           <div className="max-w-7xl mx-auto">
             {searchPerformed ? (
               <div>
@@ -123,25 +130,17 @@ export default function Home() {
                   ) : (
                     <div className="text-center bg-white p-8 rounded-lg max-w-md mx-auto shadow-sm border">
                       <p className="font-semibold text-slate-700 text-lg">Nenhum livro encontrado.</p>
-                      <p className="text-slate-500 mt-2">Tente buscar por outro termo ou listar todos os livros.</p>
+                      <p className="text-slate-500 mt-2">Tente buscar por outro termo.</p>
                     </div>
                   )
                 )}
               </div>
             ) : (
               <div className="text-center border-t-2 border-gray-200 pt-16">
-                <h2 className="text-3xl font-bold text-slate-700 mb-5">Explore nosso Acervo</h2>
-                <p className="text-slate-500">Clique no botão abaixo para ver todos os livros.</p>
+                <h2 className="text-3xl font-bold text-slate-700 mb-5">Faça uma busca para começar</h2>
+                <p className="text-slate-500">Utilize uma das opções acima para encontrar livros.</p>
               </div>
             )}
-          </div>
-          <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-            <button
-              onClick={handleGetAllBooks}
-              className="inline-flex items-center gap-3 px-8 py-4 border border-transparent text-lg font-medium rounded-full shadow-lg text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
-            >
-              <FiBookOpen /> Listar Todos os Livros
-            </button>
           </div>
         </div>
       </main>
