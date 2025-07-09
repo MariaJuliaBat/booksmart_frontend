@@ -1,4 +1,3 @@
-// backend/src/controller/book.controller.js
 
 import { books } from '../model/book.model.js';
 
@@ -21,18 +20,15 @@ export const getBookById = (req, res) => {
   return res.status(200).send(book);
 };
 
-// ** FUNÇÃO ATUALIZADA **
-// Agora busca tanto no nome do livro quanto no nome do autor
+
 export const searchBookByName = (req, res) => {
-  const query = req.params.nome.toLowerCase(); // Usamos 'query' para clareza
+  const query = req.params.nome.toLowerCase(); 
   console.log(`Requisição recebida para buscar por: "${query}"`);
   
   const filteredBooks = books.filter((book) => {
     const bookName = book.nome.toLowerCase();
     const authorName = book.autor.toLowerCase();
 
-    // A MÁGICA ACONTECE AQUI:
-    // Retorna true se a busca bater com o NOME OU com o AUTOR
     return bookName.includes(query) || authorName.includes(query);
   });
 

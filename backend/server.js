@@ -1,5 +1,3 @@
-// backend/server.js
-
 import express from 'express';
 import cors from 'cors';
 import bookRoutes from './src/routes/book.routes.js';
@@ -16,5 +14,5 @@ app.use('/api', bookRoutes);
 
 // Inicia o servidor
 app.listen(port, () => {
-  console.log('✅ Backend rodando com sintaxe moderna (ESM) em http://localhost:3001');
+  console.log('✅ Backend rodando em http://localhost:3001');
 });

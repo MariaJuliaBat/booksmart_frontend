@@ -11,4 +11,10 @@ export const books = [
   { id: 8, nome: 'Teoria dos Números', autor: 'George E. Andrews' },
   { id: 9, nome: 'Fundamentos de Matemática para Computação', autor: 'Ronald L. Graham' },
   { id: 10, nome: 'Matemática Avançada para Engenharia', autor: 'Erwin Kreyszig' },
+  { id: 11, nome: 'Análise Matemática', autor: 'Elias Zakon' },
+  { id: 12, nome: 'Álgebra Moderna', autor: 'John B. Fraleigh' },
+  { id: 13, nome: 'Lógica Matemática', autor: 'Elliott Mendelson' },
+  { id: 14, nome: 'Geometria Diferencial', autor: 'Manfredo P. do Carmo' },
+  { id: 15, nome: 'Cálculo Numérico', autor: 'Richard L. Burden' },
+  { id: 16, nome: 'Teoria da Medida e Integração', autor: 'Donald L. Cohn' }
 ];
