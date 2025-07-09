@@ -1,40 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 📚 BookSmart
 
-## Getting Started
+> Aplicação Full Stack desenvolvida como projeto final do Módulo 5, com foco na criação de uma API RESTful de livros de matemática e um frontend moderno utilizando Next.js. 
+---
 
-First, run the development server:
+### 📌 Índice
+
+* [📖 Sobre o Projeto](#-sobre-o-projeto)
+* [🖼️ Imagens do Projeto](#️-imagens-do-projeto)
+* [🛠️ Tecnologias Utilizadas](#-tecnologias-utilizadas)
+* [🚀 Como Executar o Projeto](#-como-executar-o-projeto)
+* [🔗 API](#-api)
+* [📌 Links Úteis](#-links-úteis)
+* [👩‍💻 Autora](#-autora)
+
+---
+
+### 📖 Sobre o Projeto
+
+Vivemos em um mundo com vasta produção de conhecimento, mas o acesso a livros e materiais de estudo ainda é um desafio para muitos. Essa dificuldade limita o potencial de aprendizado e desenvolvimento de estudantes.
+
+Pensando nisso, desenvolvi o **BookSmart**: uma biblioteca virtual com foco exclusivo em livros de matemática, que oferece uma experiência simples, direta e acessível.
+
+Por meio desta aplicação, é possível:
+
+* 🔍 Pesquisar livros por título, autor ou ID
+* 📚 Listar todos os livros disponíveis
+  
+---
+
+### 🖼️ Imagens do Projeto
+
+#### 🔍 Busca por ID
+
+![Busca por ID](.github/assets/busca-id.png)
+*Busca de um livro específico pelo ID*
+
+#### 🔎 Busca por Título e Autor
+
+![Busca por Título e Autor](.github/assets/busca-titulo-autor.png)
+*Busca filtrando por nome ou autor*
+
+#### 📋 Listagem Completa
+
+![Listar Todos os Livros](.github/assets/lista-completa.png)
+*Listagem completa de todos os livros cadastrados*
+
+---
+
+### 🛠️ Tecnologias Utilizadas
+
+####  Backend 
+
+| Tecnologia    | Versão |
+| ------------- | ------ |
+| Node.js       | 18.x   |
+| Express       | ^5.1.0 |
+| CORS          | ^2.8.5 |
+| Nodemon (dev) | ^3.1.9 |
+
+####  Frontend 
+
+| Tecnologia    | Versão   |
+| ------------- | -------- |
+| Next.js       | 14.2.3   |
+| React         | ^18      |
+| TypeScript    | ^5       |
+| Tailwind CSS  | ^3.4.1   |
+| Framer Motion | ^11.2.10 |
+| React Icons   | ^5.5.0   |
+
+---
+
+### 🚀 Como Executar o Projeto
+
+#### ✅ Pré-requisitos
+
+Antes de começar, instale em sua máquina:
+
+* [Git]
+* [Node.js]
+* Gerenciador de pacotes: [npm] ou [Yarn]
+
+#### 📅 Clonando o repositório
+
+```bash
+# Clone este repositório
+git clone https://github.com/MariaJuliaBat/booksmart_frontend.git
+```
+
+#### 📆 Instalando dependências
+
+Abra dois terminais:
+
+**Terminal 1 – Backend:**
+```bash
+# Instalar dependências do backend
+cd backend
+npm install
+```
+
+**Terminal 2 – Frontend:**
+```bash
+# Instalar dependências do frontend
+cd frontend
+npm install
+```
+
+#### ▶️ Executando a aplicação
+
+**Terminal 1 – Backend:**
+
+```bash
+node server.js
+```
+
+**Terminal 2 – Frontend:**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 📌 Links Úteis
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+* 📝 **Apresentação no LinkedIn**: [https://www.linkedin.com/in/mariajuliabatista](https://www.linkedin.com/posts/maria-j%C3%BAlia-batista_desenvolvimentoweb-carreiratech-aprendizadocontaednuo-activity-7348576885817192448-gEw2?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFCQBNYBeQmnPdDjQJDdsA5wcgUkK7JkdH8)
+* 🔗 **Repositório da API**: [MariaJuliaBat/MiniProjeto-M4-API](https://github.com/MariaJuliaBat/MiniProjeto-M4-API)
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+---
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### 👩‍💻 Autora
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Feito por **Maria Júlia Batista**.
 
-## Learn More
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/maria-j%C3%BAlia-batista/)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+### 🌿 Tópicos do Repositório (GitHub Topics)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+* `fullstack`
+* `api-rest`
+* `nextjs`
