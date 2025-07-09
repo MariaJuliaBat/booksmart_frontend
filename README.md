@@ -1,6 +1,6 @@
 # 📚 BookSmart
 
-> Aplicação Full Stack desenvolvida como projeto final do Módulo 5, com foco na criação de uma API RESTful de livros de matemática e um frontend moderno utilizando Next.js. 
+> Aplicação Full Stack desenvolvida como Mini Pŕojeto do Módulo 5, com foco na criação de uma API RESTful de livros de matemática e um frontend utilizando Next.js. 
 ---
 
 ### 📌 Índice
@@ -9,7 +9,6 @@
 * [🖼️ Imagens do Projeto](#️-imagens-do-projeto)
 * [🛠️ Tecnologias Utilizadas](#-tecnologias-utilizadas)
 * [🚀 Como Executar o Projeto](#-como-executar-o-projeto)
-* [🔗 API](#-api)
 * [📌 Links Úteis](#-links-úteis)
 * [👩‍💻 Autora](#-autora)
 
@@ -32,17 +31,17 @@ Por meio desta aplicação, é possível:
 
 #### 🔍 Busca por ID
 
-![Busca por ID](.github/assets/busca-id.png)
+![Busca por ID](.github/busca-id.png)
 *Busca de um livro específico pelo ID*
 
 #### 🔎 Busca por Título e Autor
 
-![Busca por Título e Autor](.github/assets/busca-titulo-autor.png)
+![Busca por Título e Autor](.github/busca-titulo-autor.png)
 *Busca filtrando por nome ou autor*
 
 #### 📋 Listagem Completa
 
-![Listar Todos os Livros](.github/assets/lista-completa.png)
+![Listar Todos os Livros](.github/lista-completa.png)
 *Listagem completa de todos os livros cadastrados*
 
 ---
