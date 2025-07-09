@@ -6,15 +6,24 @@ import BookCard from '../components/BookCard';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
+/**
+ * @page Home
+ * @description A página principal que permite a busca e listagem de livros.
+ */
 export default function Home() {
-  const [idQuery, setIdQuery] = useState('');
-  const [nameQuery, setNameQuery] = useState('');
+  // --- Estados do Componente ---
+  const [idQuery, setIdQuery] = useState(''); // Controla o input de busca por ID.
+  const [nameQuery, setNameQuery] = useState(''); // Controla o input de busca por nome.
+  const [results, setResults] = useState<IBook[]>([]); // Armazena os resultados da busca.
+  const [isLoading, setIsLoading] = useState(false); // Controla o estado de carregamento.
+  const [error, setError] = useState<string | null>(null); // Armazena mensagens de erro.
+  const [searchPerformed, setSearchPerformed] = useState(false); // Indica se uma busca já foi feita.
 
-  const [results, setResults] = useState<IBook[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [searchPerformed, setSearchPerformed] = useState(false);
-
+  /**
+   * @function performSearch
+   * @description
+   * @param searchFn A função da API a ser executada.
+   */
   const performSearch = async (searchFn: () => Promise<IBook[] | IBook>) => {
     setIsLoading(true);
     setError(null);
@@ -30,18 +39,21 @@ export default function Home() {
     }
   };
 
+  /** Manipula o envio do formulário de busca por ID. */
   const handleIdSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!idQuery.trim()) return;
     performSearch(() => BookApi.getBookById(idQuery));
   };
 
+  /** Manipula o envio do formulário de busca por Título. */
   const handleNameSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!nameQuery.trim()) return;
     performSearch(() => BookApi.searchBooksByName(nameQuery));
   };
 
+  /** Inicia a busca para listar todos os livros. */
   const handleGetAllBooks = () => {
     performSearch(BookApi.getAllBooks);
   };
@@ -103,13 +115,13 @@ export default function Home() {
             </button>
           </div>
         </div>
+        
+        {/* A seção de resultados é renderizada condicionalmente com base no estado da busca. */}
         <div className="pb-36 px-4 sm:px-10 lg:px-8 relative">
           <div className="max-w-7xl mx-auto">
             {searchPerformed ? (
               <div>
-                {isLoading && (
-                  <p className="text-center text-xl animate-pulse text-slate-600">Buscando...</p>
-                )}
+                {isLoading && <p className="text-center text-xl animate-pulse text-slate-600">Buscando...</p>}
                 {error && (
                   <div className="text-center text-red-600 bg-red-100 p-4 rounded-lg max-w-md mx-auto">
                     <strong>Erro:</strong> {error}

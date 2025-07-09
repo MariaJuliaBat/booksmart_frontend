@@ -1,5 +1,9 @@
 import React from 'react';
 
+/**
+ * @component Footer
+ * @description Componente de rodapé padrão para a aplicação.
+ */
 const Footer = () => {
   return (
     <footer className="bg-brand-surface/90 backdrop-blur text-brand-text-secondary border-t border-white/10">

@@ -3,9 +3,11 @@
 @tailwind utilities;
 
 body {
+  /* Impede a seleção de texto na página. */
   @apply select-none;
 }
 
+/* Animação de fade-in para a entrada de elementos. */
 @keyframes fadeIn {
     from {
       opacity: 0;
@@ -17,6 +19,7 @@ body {
     }
   }
 
+  /* Classe para aplicar a animação fadeIn. */
   .animate-fadeIn {
     animation: fadeIn 0.5s ease-out forwards;
   }

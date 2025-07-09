@@ -1,6 +1,10 @@
 import React from 'react';
 import { SiBookstack } from 'react-icons/si';
 
+/**
+ * @component Navbar
+ * @description Barra de navegação superior da aplicação.
+ */
 const Navbar = () => {
   return (
     <nav className="bg-white shadow-sm border-b border-gray-200">
