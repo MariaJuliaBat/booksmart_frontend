@@ -31,7 +31,7 @@ Por meio desta aplicação, é possível:
 
 #### 🔍 Busca por ID
 
-![Busca por ID](.github/busca-id.png)
+![Busca por ID](.github/busca-id.png.png)
 *Busca de um livro específico pelo ID*
 
 #### 🔎 Busca por Título e Autor
