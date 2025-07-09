@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply select-none;
+}
+
 @keyframes fadeIn {
     from {
       opacity: 0;
